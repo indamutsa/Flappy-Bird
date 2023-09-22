@@ -42,4 +42,16 @@ class Pipe:
         win.blit(self.PIPE_TOP, (self.x, self.top)) # Draw the top pipe
         win.blit(self.PIPE_BOTTOM, (self.x, self.bottom)) # Draw the bottom pipe
         
-    
+    def collide(self, bird):
+        bird_mask = bird.get_mask() # Mask for the bird to detect collision
+        top_mask = pygame.mask.from_surface(self.PIPE_TOP) # Mask for the top pipe
+        bottom_mask = pygame.mask.from_surface(self.PIPE_BOTTOM) # Mask for the bottom pipe
+        
+        # Offset is the distance between the bird and the pipe - How can we check the distance between the bird and the pipe?
+        # We can check the distance between the bird and the pipe by subtracting the bird mask from the top mask and the bottom mask
+        # If the bird is colliding with the top pipe, the offset is going to be a negative number
+        # If the bird is colliding with the bottom pipe, the offset is going to be a positive number
+        top_offset = (self.x - bird.x, self.top - round(bird.y)) # Offset for the top pipe
+        bottom_offset = (self.x - bird.x, self.bottom - round(bird.y))
+        
+        

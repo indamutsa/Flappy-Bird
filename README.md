@@ -149,3 +149,9 @@ else:
 In this example, if `collision_point` is not `None`, then a collision occurred at the point returned by the `overlap` function. This allows for a very accurate collision detection.
 
 This approach should provide a good balance of accuracy and performance, especially for irregularly shaped objects like the bird and pipes in Flappy Bird.
+
+---
+
+Course by [Tech With Tim](https://www.youtube.com/channel/UC4JX40jDee_tINbkjycV4Sg)
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/OGHA-elMrxI/0.jpg)](https://www.youtube.com/watch?v=OGHA-elMrxI)
