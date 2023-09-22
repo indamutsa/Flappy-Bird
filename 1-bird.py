@@ -57,7 +57,7 @@ class Bird:
             if self.tilt > -90:
                 self.tilt -= self.ROT_VEL
                 
-    # Method to draw the bird
+    # Method to draw the bird -- This is the method responsible the bird to flap its wings animation
     def draw(self, win):
         self.img_count += 1  # How many times we showed the current image
 
@@ -86,4 +86,4 @@ class Bird:
         
     # Method to get the mask
     def get_mask(self):
-        return pygame.mask.from_surface(self.img)
+        return pygame.mask.from_surface(self.img) # Get the mask of the image. It can be used to calculate pixel perfect collisions

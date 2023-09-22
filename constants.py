@@ -6,7 +6,7 @@ import time
 import neat
 
 # Constants
-WIN_WIDTH = 700
+WIN_WIDTH = 500
 WIN_HEIGHT = 800
 
 # Load Images
