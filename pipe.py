@@ -7,7 +7,7 @@ import pygame
 import random
 
 # Local imports
-from constants import WIN_WIDTH, WIN_HEIGHT, PIPE_IMG
+from constants import PIPE_IMG
 
 
 class Pipe:
@@ -53,5 +53,15 @@ class Pipe:
         # If the bird is colliding with the bottom pipe, the offset is going to be a positive number
         top_offset = (self.x - bird.x, self.top - round(bird.y)) # Offset for the top pipe
         bottom_offset = (self.x - bird.x, self.bottom - round(bird.y))
+        
+        # Point of collision with the bottom pipe, if there is no collision, it is going to return None
+        b_point = bird_mask.overlap(bottom_mask, bottom_offset) 
+        t_point = bird_mask.overlap(top_mask, top_offset)
+        
+        # If there is a collision, return True
+        if t_point or b_point:
+            return True
+        
+        return False # If there is no collision, return False
         
         

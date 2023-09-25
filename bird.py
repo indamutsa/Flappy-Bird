@@ -4,7 +4,7 @@ import pygame
 import random
 import time
 import neat
-from constants import WIN_WIDTH, WIN_HEIGHT, BIRD_IMGS, PIPE_IMGS, BASE_IMG, BG_IMG
+from constants import BIRD_IMGS
 
 
 # Let us create the classes:
@@ -23,6 +23,7 @@ class Bird:
         self.vel = 0 # Velocity of the bird
         self.height = self.y # Height of the bird
         self.img_count = 0 # Which image we are showing
+        self.img = self.IMGS[0] # Which image we are showing
         
         
     # Method to jump

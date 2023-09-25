@@ -152,6 +152,6 @@ This approach should provide a good balance of accuracy and performance, especia
 
 ---
 
-Course by [Tech With Tim](https://www.youtube.com/channel/UC4JX40jDee_tINbkjycV4Sg)
+Course by _[Tech With Tim](https://www.youtube.com/channel/UC4JX40jDee_tINbkjycV4Sg)_
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/OGHA-elMrxI/0.jpg)](https://www.youtube.com/watch?v=OGHA-elMrxI)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/OGHA-elMrxI/0.jpg)](https://github.com/indamutsa/Flappy-Bird/tree/main/images)

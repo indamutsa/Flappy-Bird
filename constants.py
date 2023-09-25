@@ -17,6 +17,6 @@ BIRD_IMGS = [
     pygame.transform.scale2x(pygame.image.load(os.path.join("images", "bird3.png"))),
 ]
 
-PIPE_IMGS = pygame.transform.scale2x(pygame.image.load(os.path.join("images", "base.png")))
-BASE_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("images", "pipe.png")))
+BASE_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("images", "base.png")))
+PIPE_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("images", "pipe.png")))
 BG_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("images", "bg.png")))
