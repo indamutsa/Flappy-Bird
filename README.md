@@ -188,3 +188,100 @@ Activation function: TanH
 Population size: 100
 Fitness function: How good our birds are. The fitness is the score of the bird. The score is the number of pipes the bird has passed.
 Max Generations: 30
+
+---
+
+**\*\*** Running generation 0 **\*\***
+
+Population's average fitness: 3.69000 stdev: 1.31107
+Best fitness: 6.00000 - size: (1, 3) - species 1 - id 2
+Average adjusted fitness: 0.376
+Mean genetic distance 1.421, standard deviation 0.584
+Population of 10 members in 1 species:
+ID age size fitness adj fit stag
+==== === ==== ======= ======= ====
+1 0 10 6.0 0.376 0
+Total extinctions: 0
+Generation time: 2.724 sec
+
+**\*\*** Running generation 1 **\*\***
+
+Population's average fitness: 3.41000 stdev: 1.24052
+Best fitness: 5.80000 - size: (1, 3) - species 1 - id 14
+Average adjusted fitness: 0.317
+Mean genetic distance 1.368, standard deviation 0.710
+Population of 10 members in 1 species:
+ID age size fitness adj fit stag
+==== === ==== ======= ======= ====
+1 1 10 5.8 0.317 1
+Total extinctions: 0
+Generation time: 2.553 sec (2.639 average)
+
+**\*\*** Running generation 2 **\*\***
+
+Population's average fitness: 7.28000 stdev: 8.34611
+Best fitness: 31.10000 - size: (1, 3) - species 1 - id 21
+Average adjusted fitness: 0.173
+Mean genetic distance 0.812, standard deviation 0.330
+Population of 10 members in 1 species:
+ID age size fitness adj fit stag
+==== === ==== ======= ======= ====
+1 2 10 31.1 0.173 0
+Total extinctions: 0
+Generation time: 7.621 sec (4.299 average)
+
+**\*\*** Running generation 3 **\*\***
+
+Population's average fitness: 7.00000 stdev: 5.30830
+Best fitness: 18.70000 - size: (1, 3) - species 1 - id 21
+Average adjusted fitness: 0.287
+Mean genetic distance 1.055, standard deviation 0.393
+Population of 10 members in 1 species:
+ID age size fitness adj fit stag
+==== === ==== ======= ======= ====
+1 3 10 18.7 0.287 1
+Total extinctions: 0
+Generation time: 5.187 sec (4.521 average)
+
+**\*\*** Running generation 4 **\*\***
+
+Population's average fitness: 5.44000 stdev: 5.25399
+Best fitness: 18.10000 - size: (1, 3) - species 1 - id 21
+Average adjusted fitness: 0.199
+Mean genetic distance 0.705, standard deviation 0.469
+Population of 10 members in 1 species:
+ID age size fitness adj fit stag
+==== === ==== ======= ======= ====
+1 4 10 18.1 0.199 2
+Total extinctions: 0
+Generation time: 4.989 sec (4.615 average)
+
+**\*\*** Running generation 5 **\*\***
+
+Population's average fitness: 6.49000 stdev: 5.68532
+Best fitness: 17.80000 - size: (1, 3) - species 1 - id 21
+Average adjusted fitness: 0.270
+Mean genetic distance 0.620, standard deviation 0.437
+Population of 10 members in 1 species:
+ID age size fitness adj fit stag
+==== === ==== ======= ======= ====
+1 5 10 17.8 0.270 3
+Total extinctions: 0
+Generation time: 4.887 sec (4.660 average)
+
+**\*\*** Running generation 6 **\*\***
+
+Population's average fitness: 3.71000 stdev: 1.34867
+Best fitness: 5.50000 - size: (1, 2) - species 1 - id 56
+Average adjusted fitness: 0.441
+Mean genetic distance 1.080, standard deviation 0.605
+Population of 10 members in 1 species:
+ID age size fitness adj fit stag
+==== === ==== ======= ======= ====
+1 6 10 5.5 0.441 4
+Total extinctions: 0
+Generation time: 2.466 sec (4.347 average)
+
+**\*\*** Running generation 7 **\*\***
+
+As we can see at Generation 7, we have a bird that has a fitness of 5.5. This is the best bird so far. We will save this bird and use it to create the next generation of birds. We will also save the best bird of each generation. We will use these birds to create the next generation of birds.
