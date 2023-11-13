@@ -14,22 +14,17 @@ from constants import WIN_WIDTH, WIN_HEIGHT, BIRD_IMGS, PIPE_IMG, BASE_IMG, BG_I
 pygame.font.init() # Initialize the font
 STAT_FONT = pygame.font.SysFont("comicsans", 50) # Font to display the score
 
-# Let us draw the bird
+# Draw the game window
 def draw_window(win, bird, pipes, base, score):
-    win.blit(BG_IMG, (0,0)) # Draw the background image
-    
-    # Drawing the pipes 
+    win.blit(BG_IMG, (0, 0))
     for pipe in pipes:
         pipe.draw(win)
-        
-    # Draw the score
-    text = STAT_FONT.render("Score: " + str(score), 1, (255,255,255))
-    win.blit(text, (WIN_WIDTH - 10 - text.get_width(), 10)) # Draw the score
-    
-    base.draw(win) # Draw the base   
-    bird.draw(win) # Draw the bird 
-    pygame.display.update() # Update the display
-    
+    text = STAT_FONT.render("Score: " + str(score), 1, (255, 255, 255))
+    win.blit(text, (WIN_WIDTH - 10 - text.get_width(), 10))
+    base.draw(win)
+    bird.draw(win)
+    pygame.display.update()
+
 # Main function
 def main():
     bird = Bird(230, 350) # Create a bird object
@@ -42,6 +37,13 @@ def main():
     
     run = True # Run the game
     score = 0 # Score of the game when the bird passes the pipe
+
+    # New variables for bird speed (added)
+    bird_velocity_x = 0  
+    bird_velocity_y = 0  
+    acceleration_y = 1  
+    acceleration_x = 0  
+    max_velocity_x = 5  
     
     while run:
         clock.tick(30) # 30 frames per second
@@ -53,6 +55,30 @@ def main():
                 win = pygame.display.set_mode((event.w, event.h), pygame.RESIZABLE)
                 draw_window(win, bird, pipes, base, score)    
                 
+            # Handling speed change (added)
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_UP:
+                    bird_velocity_y -= acceleration_y
+                elif event.key == pygame.K_DOWN:
+                    bird_velocity_y += acceleration_y
+                elif event.key == pygame.K_LEFT:
+                    acceleration_x = -0.1
+                elif event.key == pygame.K_RIGHT:
+                    acceleration_x = 0.1
+                    
+            # Handling speed change stop (added)
+            if event.type == pygame.KEYUP:
+                if event.key in (pygame.K_UP, pygame.K_DOWN):
+                    bird_velocity_y = 0
+                if event.key in (pygame.K_LEFT, pygame.K_RIGHT):
+                    acceleration_x = 0
+
+        # Update bird position (added)
+        bird_velocity_x = min(max_velocity_x, bird_velocity_x + acceleration_x)
+        bird_velocity_x = max(-max_velocity_x, bird_velocity_x)
+        bird.y += bird_velocity_y
+        bird.x += bird_velocity_x
+        
         base.move() # Move the base
         
         # Move the pipes
@@ -100,5 +126,3 @@ def main():
     pygame.quit()
     quit()
 
-if __name__ == "__main__":
-    main()

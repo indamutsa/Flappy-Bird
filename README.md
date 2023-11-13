@@ -155,3 +155,36 @@ This approach should provide a good balance of accuracy and performance, especia
 Course by _[Tech With Tim](https://www.youtube.com/channel/UC4JX40jDee_tINbkjycV4Sg)_
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/OGHA-elMrxI/0.jpg)](https://github.com/indamutsa/Flappy-Bird/tree/main/images)
+
+---
+
+## Integrating NEAT (NeuroEvolution of Augmenting Topologies) into Flappy Bird
+
+NEAT which stands for NeuroEvolution of Augmenting Topologies is a genetic algorithm for the generation of evolving artificial neural networks. It is a method for evolving arbitrary neural networks. NEAT is based on applying three key techniques: tracking genes with history markers, applying speciation (the evolution of species) to preserve innovations, and developing topologies incrementally from simple initial structures ("complexifying"). It was developed by Kenneth O. Stanley while at The University of Texas at Austin. NEAT has been applied to a number of reinforcement learning tasks, including the evolution of a neural network to play checkers.
+
+Each neural networks has input layers, hidden layers and output layers. The input layers are the inputs of the neural network. The hidden layers are the layers between the input and output layers. The output layers are the outputs of the neural network. The neural network will take the inputs, process them through the hidden layers and output the outputs.
+
+In our scenario, the inputs will be the bird's y position, the distance between the bird and the next pipe and the distance between the bird and the next pipe's bottom. _The outputs will be the jump or not jump decision_. We also have connections between the nodes. The connections are the weights of the neural network. The weights are the values that will be multiplied by the inputs to get the outputs. The weights will be adjusted by the NEAT algorithm. Once this is done, we will add the bias to the weights. The bias is a constant value that will be added to the weighted sum of the inputs. The bias will be adjusted by the NEAT algorithm.
+
+At the end, we add an activation function to the output layer. The activation function will determine the output of the neural network. In our case, we will use the sigmoid function as the activation function. The sigmoid function will return a value between 0 and 1. If the value is greater than 0.5, the bird will jump. If the value is less than 0.5, the bird will not jump. We will use TanH as the activation function for the hidden layers. TanH will return a value between -1 and 1.
+
+It is important to note that the weights, bias and activation functions will be adjusted by the NEAT algorithm. The NEAT algorithm will also add and remove nodes and connections. The NEAT algorithm will also add and remove hidden layers. So we don't have to manually add connections between the nodes.
+
+### Approach
+
+1. Let us start by creating a random population of birds. Each bird has a neural networks that controls its movement.
+2. We test each of these networks and evaluate their fitness. The fitness is the score of the bird. The score is the number of pipes the bird has passed.
+3. We select the best birds and use them to create the next generation of birds. We do this by applying crossover and mutation to the best birds. How does NEAT breed and mutate the next generation? Here is the [paper](https://nn.cs.utexas.edu/downloads/papers/stanley.cec02.pdf) that explains the [NEAT algorithm](http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf).
+
+---
+
+The outputs will be either we jump or we don't jump. Hence we need one neuron. We will use TanH as the activation function for the hidden layers. TanH will return a value between -1 and 1. It is important to note that the weights, bias and activation functions will be adjusted by the NEAT algorithm. The NEAT algorithm will also add and remove nodes and connections. The NEAT algorithm will also add and remove hidden layers. So we don't have to manually add connections between the nodes.
+
+---
+
+Inputs: Bird y position, top pipe y position, bottom pipe y position
+Outputs: Jump or not jump. One neuron
+Activation function: TanH
+Population size: 100
+Fitness function: How good our birds are. The fitness is the score of the bird. The score is the number of pipes the bird has passed.
+Max Generations: 30
