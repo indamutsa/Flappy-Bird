@@ -50,6 +50,12 @@ python -m venv pyenv
 source pyenv/bin/activate
 ```
 
+RUN THE GAME
+
+```sh
+python main.py
+```
+
 ---
 
 First let us understand the game logic. We will use object oriented programming to create the game.

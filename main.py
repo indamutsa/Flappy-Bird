@@ -13,11 +13,11 @@ from constants import WIN_WIDTH, WIN_HEIGHT, BIRD_IMGS, PIPE_IMG, BASE_IMG, BG_I
 
 pygame.font.init()  # Initialize the font
 STAT_FONT = pygame.font.SysFont("comicsans", 50)  # Font to display the score
-
+GEN = 0  # Generation
 # Let us draw the bird
 
 
-def draw_window(win, birds, pipes, base, score):
+def draw_window(win, birds, pipes, base, score, gen):
     win.blit(BG_IMG, (0, 0))  # Draw the background image
 
     # Drawing the pipes
@@ -27,6 +27,10 @@ def draw_window(win, birds, pipes, base, score):
     # Draw the score
     text = STAT_FONT.render("Score: " + str(score), 1, (255, 255, 255))
     win.blit(text, (WIN_WIDTH - 10 - text.get_width(), 10))  # Draw the score
+
+    # Draw the generation
+    text = STAT_FONT.render("Gen: " + str(gen), 1, (255, 255, 255))
+    win.blit(text, (10, 10))  # Draw the score
 
     base.draw(win)  # Draw the base
 
@@ -39,6 +43,9 @@ def draw_window(win, birds, pipes, base, score):
 
 
 def main(genomes, config):
+    global GEN
+    GEN += 1  # Increase the generation
+
     nets = []  # Neural networks
     ge = []  # Genomes
     birds = []  # List of birds
@@ -141,7 +148,7 @@ def main(genomes, config):
                 ge.pop(x)  # Remove the genome
 
         # Draw the window to display the game
-        draw_window(win, birds, pipes, base, score)
+        draw_window(win, birds, pipes, base, score, GEN)
 
 
 def run(config_path):
@@ -159,6 +166,7 @@ def run(config_path):
     p.add_reporter(stats)  # Add a reporter to show the statistics
 
     # Run the main function (which is was configured to be the fitness function) 50 times
+    # In case, we want to save the winner and just run it once. We will need to create another main function that takes in the winner as a parameter and run it once.
     winner = p.run(main, 50)
 
 
